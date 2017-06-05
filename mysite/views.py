@@ -9,11 +9,11 @@ def current_datetime(request):
     html = "It is now %s." % now
     return HttpResponse(html)
 
-def hours_ahead(request, offset):
+def hours_ahead(request, offset, another):
     try:
         offset = int(offset)
     except ValueError:
         raise Http404()
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
-    html = "In %s hour(s), it will be %s." % (offset, dt)
+    html = "In %s hour(s), it will be %s. Extra argument is %s" % (offset, dt, another)
     return HttpResponse(html)
