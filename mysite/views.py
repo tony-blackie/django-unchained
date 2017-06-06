@@ -17,3 +17,6 @@ def hours_ahead(request, offset, another):
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
     html = "In %s hour(s), it will be %s. Extra argument is %s" % (offset, dt, another)
     return HttpResponse(html)
+
+def render_users(request):
+    return render(request, 'users.html', {'name': 'Looney'})
