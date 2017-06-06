@@ -19,4 +19,14 @@ def hours_ahead(request, offset, another):
     return HttpResponse(html)
 
 def render_users(request):
-    return render(request, 'users.html', {'name': 'Looney'})
+    users = [
+        {
+            "name": "Looney",
+            "age": 22
+        },
+        {
+            "name": "Tunes",
+            "age": 33
+        },
+    ]
+    return render(request, 'users.html', {'users': users})
