@@ -27,6 +27,6 @@ def render_users(request):
         {
             "name": "Tunes",
             "age": 33
-        },
+        }
     ]
     return render(request, 'users.html', {'users': users})
