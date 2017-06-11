@@ -15,7 +15,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from mysite.views import hello, current_datetime, hours_ahead, render_users
-from books.views import get_all_publishers
+from books.views import get_all_publishers, search_form, search
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^time/$', current_datetime),
     url(r'^users/$', render_users),
     url(r'^time/plus/(\d{1,2})/(1)/$', hours_ahead),
-    url(r'^publishers/$', get_all_publishers)
+    url(r'^publishers/$', get_all_publishers),
+    url(r'^search-form/$', search_form),
+    url(r'^search/$', search),
 ]
